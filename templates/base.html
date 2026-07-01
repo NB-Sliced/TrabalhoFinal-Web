@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+</head>
+<body>
+
+<header>
+    <div class="header-top">
+        <a href="{% url 'catalogo:home' %}" class="logo">
+            <span class="logo-icone">📖</span>
+            Biblioteca Digital
+        </a>
+
+        <form class="busca" action="#" method="get">
+            <input type="text" name="q" placeholder="Buscar livros, autores, categorias...">
+            <button type="submit" class="busca-btn">🔍</button>
+        </form>
+
+        <div class="header-acoes">
+            <a href="{% url 'usuarios:cadastro' %}" class="acao-item">
+                <span class="acao-icone">👤</span>
+                <span>Cadastro / Login</span>
+            </a>
+            <a href="{% url 'reservas:ver_reserva' %}" class="acao-item">
+                <span class="acao-icone">📚</span>
+                <span>Minha Estante</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="header-nav">
+        <a href="{% url 'catalogo:home' %}">Início</a>
+        <a href="#">Categorias</a>
+        <a href="#">Autores</a>
+        <a href="#">Novidades</a>
+        <a href="#">Sobre</a>
+        <a href="#">Ajuda</a>
+    </nav>
+
+</header>
+    
+</body>
+</html>
