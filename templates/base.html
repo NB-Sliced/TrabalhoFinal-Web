@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Digital</title>
+    <title>{% block title %}Biblioteca Digital{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
 
@@ -39,8 +42,59 @@
         <a href="#">Sobre</a>
         <a href="#">Ajuda</a>
     </nav>
-
 </header>
-    
+
+<main class="conteudo">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="footer-topo">
+        <div class="footer-coluna footer-sobre">
+            <a href="{% url 'catalogo:home' %}" class="logo">
+                <span class="logo-icone">📖</span>
+                Biblioteca Digital
+            </a>
+            <p>Promovendo acesso ao conhecimento e incentivando a leitura para transformar vidas e construir um futuro melhor.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="YouTube">▶️</a>
+            </div>
+        </div>
+
+        <div class="footer-coluna">
+            <h4>Institucional</h4>
+            <a href="#">Quem somos</a>
+            <a href="#">Missão e visão</a>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="footer-coluna">
+            <h4>Ajuda</h4>
+            <a href="#">Perguntas frequentes</a>
+            <a href="#">Como usar</a>
+            <a href="#">Fale conosco</a>
+            <a href="#">Tutoriais</a>
+        </div>
+
+        <div class="footer-coluna">
+            <h4>Contato</h4>
+            <p>✉️ contato@bibliotecadigital.org.br</p>
+            <p>📞 (11) 1234-5678</p>
+            <p>📍 Rua do Conhecimento, 123<br>São Paulo - SP, 01000-000</p>
+        </div>
+    </div>
+
+    <div class="footer-base">
+        <p>&copy; {% now "Y" %} Biblioteca Digital. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="{% static 'js/base.js' %}"></script>
+{% block extra_js %}{% endblock %}
 </body>
 </html>

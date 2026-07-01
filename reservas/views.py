@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def ver_reserva(request):
+    return render(request, 'reservas/reserva_list.html')
