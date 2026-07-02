@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ categoria.nome }} - Biblioteca Digital{% endblock %}
+
+{% block content %}
+
+<section class="secao-categoria">
+  <h2>{{ categoria.nome }}</h2>
+  <p>{{ categoria.descricao }}</p>
+
+  <div class="cards-grid">
+    {% for livro in livros %}
+    <div class="card">
+      <img src="{{ livro.imagem_capa }}" alt="{{ livro.titulo }}">
+      <h3>{{ livro.titulo }}</h3>
+      <p>{{ livro.autor }}</p>
+      <p>{{ livro.editora }}, {{ livro.ano }}</p>
+      <a href="#" class="btn">Ver detalhes</a>
+    </div>
+    {% empty %}
+    <p>Nenhum livro cadastrado nesta categoria ainda.</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
