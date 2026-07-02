@@ -5,170 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Biblioteca Digital{% endblock %}</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-=======
-
-    <link rel="stylesheet" href="{% static 'css/membro2.css' %}">
-
->>>>>>> origin/membro2-leitor
-    {% block extra_css %}{% endblock %}
-</head>
-<body>
-{% url 'catalogo:home' as home_url %}
-{% url 'usuarios:cadastro' as cadastro_url %}
-{% url 'usuarios:login' as login_url %}
-{% url 'reservas:ver_reserva' as reserva_url %}
-
-<<<<<<< HEAD
-<header>
-    <div class="header-cima">
-        <a href="{% url 'catalogo:home' %}" class="logo">
-        <i class="bi bi-book"></i>Biblioteca Digital
-        </a>
-
-        <form 
-        class="busca" 
-        action="" 
-        method="get">
-            <input 
-            type="" 
-            name="" 
-            placeholder="Buscar livros, autores, categorias...">
-            <button 
-            type="submit" 
-            class="busca-bt"><i class="bi bi-search"></i></button>
-        </form>
-
-        <div class="header-botoes">
-            <a href="" 
-            class="bt-cadastrar">
-                <span class="svg_user"><i class="bi bi-person-circle acao-icone"></i></span>
-                <span>Cadastro / Login</span>
-            </a>
-            <a href="{% url 'reservas:ver_reserva' %}" class="estantezona">
-                <span class="svg_livros">
-                    <i class="bi-bookmark-star acao-icone"></i></span>
-=======
-<header class="topo">
-    <div class="header-top container">
-        <a href="{{ home_url|default:'/' }}" class="logo">
-            <span class="logo-icone">📖</span>
-            Biblioteca Digital
-        </a>
-
-        <form class="busca" action="#" method="get">
-            <input type="text" name="q" placeholder="Buscar livros, autores, categorias...">
-            <button type="submit" class="busca-btn" aria-label="Buscar">🔍</button>
-        </form>
-
-        <div class="header-acoes">
-            <a href="{{ cadastro_url|default:'/usuarios/cadastro/' }}" class="acao-item">
-                <span class="acao-icone">👤</span>
-                <span>Cadastro</span>
-            </a>
-
-            <a href="{{ login_url|default:'/usuarios/login/' }}" class="acao-item">
-                <span class="acao-icone">🔐</span>
-                <span>Login</span>
-            </a>
-
-            <a href="{{ reserva_url|default:'/reservas/' }}" class="acao-item">
-                <span class="acao-icone">📚</span>
->>>>>>> origin/membro2-leitor
-                <span>Minha Estante</span>
-            </a>
-        </div>
-    </div>
-
-<<<<<<< HEAD
-    <nav class="nav-navegar">
-        <a href="">Início</a>
-        <a href="">Categorias</a>
-        <a href="">Autores</a>
-        <a href="">Novidades</a>
-        <a href="">Sobre</a>
-        <a href="">Ajuda</a>
-=======
-    <nav class="header-nav container">
-        <a href="{{ home_url|default:'/' }}">Início</a>
-        <a href="#">Categorias</a>
-        <a href="#">Autores</a>
-        <a href="#">Novidades</a>
-        <a href="#">Sobre</a>
-        <a href="#">Ajuda</a>
->>>>>>> origin/membro2-leitor
-    </nav>
-</header>
-
-<main>
-    {% if messages %}
-        <section class="container mensagens">
-            {% for message in messages %}
-                <p class="mensagem {{ message.tags }}">{{ message }}</p>
-            {% endfor %}
-        </section>
-    {% endif %}
-
-    {% block content %}{% endblock %}
-</main>
-
-<<<<<<< HEAD
-<footer class="footer">
-    <div class="footer-topo">
-        <div class="footer-coluna footer-sobre">
-            <a href="" class="logo">
-                <span><i class="bi bi-book"></i></span>
-                <span>Biblioteca Digital</span>
-            </a>
-            <p>Promovendo acesso ao conhecimento e incentivando a leitura para transformar vidas e construir um futuro melhor.</p>
-            <div class="footer-social">
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            </div>
-=======
-<footer class="rodape">
-    <div class="container rodape-grid">
-        <div>
-            <h3>📖 Biblioteca Digital</h3>
-            <p>Consulta, visualização e reserva de livros em uma biblioteca digital.</p>
->>>>>>> origin/membro2-leitor
-        </div>
-
-        <div>
-            <h4>Institucional</h4>
-            <p>Quem somos</p>
-            <p>Missão e visão</p>
-        </div>
-
-        <div>
-            <h4>Ajuda</h4>
-            <p>Perguntas frequentes</p>
-            <p>Como usar</p>
-        </div>
-
-<<<<<<< HEAD
-        <div class="footer-coluna contato">
-            <h4>Contato</h4>
-                <p><i class="bi bi-envelope"></i> contato@bibliotecadigital.org.br</p>
-                <p><i class="bi bi-telephone"></i> (11) 1234-5678</p>
-                <p><i class="bi bi-geo-alt"></i> Rua do Conhecimento, 123<br>São Paulo - SP, 01000-000</p>
-        </div>
-    </div>
-
-    <div class="footer-baixo">
-        <p>Biblioteca Digital. Todos os direitos reservados.</p>
-    </div>
-======={% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Biblioteca Digital{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     {% block extra_css %}{% endblock %}
@@ -181,8 +17,13 @@
             <i class="bi bi-book"></i>Biblioteca Digital
         </a>
 
-        <form class="busca" action="" method="get">
-            <input type="text" name="q" placeholder="Buscar livros, autores, categorias...">
+        <form class="busca" 
+        action="" 
+        method="get">
+            <input 
+            type="text" 
+            name="busca" 
+            placeholder="Buscar livros, autores, categorias...">
             <button type="submit" class="busca-bt"><i class="bi bi-search"></i></button>
         </form>
 
@@ -240,17 +81,22 @@
             </div>
         </div>
 
-        <div>
+        <div class="footer-coluna">
             <h4>Institucional</h4>
-            <p>Quem somos</p>
-            <p>Missão e visão</p>
+            <a href="#">Quem somos</a>
+            <a href="#">Missão e visão</a>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
         </div>
 
-        <div>
+        <div class="footer-coluna">
             <h4>Ajuda</h4>
-            <p>Perguntas frequentes</p>
-            <p>Como usar</p>
+            <a href="#">Perguntas frequentes</a>
+            <a href="#">Como usar</a>
+            <a href="#">Fale conosco</a>
+            <a href="#">Tutoriais</a>
         </div>
+
 
         <div class="footer-coluna contato">
             <h4>Contato</h4>
@@ -263,18 +109,6 @@
     <div class="footer-baixo">
         <p>Biblioteca Digital. Todos os direitos reservados.</p>
     </div>
-</footer>
-
-{% block extra_js %}{% endblock %}
-</body>
-</html>
-        <div>
-            <h4>Contato</h4>
-            <p>contato@bibliotecadigital.com.br</p>
-            <p>(11) 1234-5678</p>
-        </div>
-    </div>
->>>>>>> origin/membro2-leitor
 </footer>
 
 {% block extra_js %}{% endblock %}
