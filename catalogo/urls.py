@@ -4,5 +4,8 @@ from . import views
 app_name = 'catalogo'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.index, name='home'),
+    path('categoria/<slug:slug>/', views.categoria_detalhe, name='categoria_detalhe'),
+    path('api/categorias/', views.api_categorias, name='api_categorias'),
+    path('api/livros/', views.api_livros, name='api_livros'),
 ]

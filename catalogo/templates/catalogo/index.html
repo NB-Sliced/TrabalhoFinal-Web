@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Biblioteca Digital - Início{% endblock %}
+
+{% block content %}
+
+<section class="secao-categorias">
+  <h2>Categorias de Livros</h2>
+  <div class="cards-grid">
+    {% for categoria in categorias %}
+    <div class="card">
+      <img src="{{ categoria.imagem }}" alt="{{ categoria.nome }}">
+      <h3>{{ categoria.nome }}</h3>
+      <p>{{ categoria.descricao }}</p>
+      <a href="{% url 'catalogo:categoria_detalhe' categoria.slug %}" class="btn">Ver livros</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="secao-mais-emprestados">
+  <h2>📖 5 Livros mais emprestados</h2>
+  <div class="cards-grid">
+    {% for livro in mais_emprestados %}
+    <div class="card">
+      <img src="{{ livro.imagem_capa }}" alt="{{ livro.titulo }}">
+      <h3>{{ livro.titulo }}</h3>
+      <p>{{ livro.autor }}</p>
+      <a href="#" class="btn">Ver detalhes</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
