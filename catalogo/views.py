@@ -2,8 +2,10 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import Categoria, Livro
 
+
 def home(request):
-    return render(request,'catalogo/home.html')
+    return render(request, 'catalogo/home.html')
+
 
 def index(request):
     categorias = Categoria.objects.all()
@@ -13,6 +15,7 @@ def index(request):
         'mais_emprestados': mais_emprestados,
     })
 
+
 def categoria_detalhe(request, slug):
     categoria = get_object_or_404(Categoria, slug=slug)
     livros = Livro.objects.filter(genero=categoria)
@@ -21,9 +24,21 @@ def categoria_detalhe(request, slug):
         'livros': livros,
     })
 
+
+def detalhes_livro(request, livro_id):
+    """
+    Página 3: detalhes do livro.
+    """
+    livro = get_object_or_404(Livro, id=livro_id)
+    return render(request, 'catalogo/detalhes_livro.html', {
+        'livro': livro,
+    })
+
+
 def api_categorias(request):
     categorias = list(Categoria.objects.values('id', 'nome', 'descricao', 'imagem', 'slug'))
     return JsonResponse(categorias, safe=False)
+
 
 def api_livros(request):
     categoria_id = request.GET.get('categoria_id')
@@ -31,5 +46,3 @@ def api_livros(request):
         'id', 'titulo', 'autor', 'editora', 'ano', 'imagem_capa', 'disponivel', 'emprestimos'
     )
     return JsonResponse(list(livros), safe=False)
-
-

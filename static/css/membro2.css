@@ -1,0 +1,392 @@
+:root {
+    --azul: #0b3a66;
+    --azul-claro: #eef7fb;
+    --verde: #009e9a;
+    --cinza: #f4f7fa;
+    --texto: #1f2a37;
+    --borda: #d8e0e8;
+    --erro: #b42318;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: #ffffff;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+.topo {
+    border-bottom: 1px solid var(--borda);
+    background: #ffffff;
+}
+
+.header-top {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--azul);
+    font-size: 1.45rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo-icone {
+    margin-right: 6px;
+}
+
+.busca {
+    flex: 1;
+    display: flex;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.busca input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+}
+
+.busca-btn {
+    border: none;
+    background: #ffffff;
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.header-acoes {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.acao-item {
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.acao-icone {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.header-nav {
+    display: flex;
+    gap: 28px;
+    padding: 0 0 14px;
+}
+
+.header-nav a {
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.formulario-pagina,
+.detalhes-livro,
+.pagina-simples {
+    padding: 36px 0 48px;
+}
+
+.cabecalho-pagina h1,
+.pagina-simples h1,
+.info-livro h1 {
+    margin: 0 0 8px;
+    color: var(--azul);
+    font-size: 2rem;
+}
+
+.cabecalho-pagina p,
+.pagina-simples p {
+    margin: 0 0 22px;
+    color: #526170;
+}
+
+.form-card,
+.confirmacao-card,
+.painel-detalhe,
+.capa-card,
+.info-livro {
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.form-card {
+    padding: 24px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 22px;
+}
+
+.campo-grande {
+    grid-column: span 2;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 12px;
+    font: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: 2px solid rgba(0, 158, 154, 0.22);
+    border-color: var(--verde);
+}
+
+.erro {
+    display: block;
+    min-height: 18px;
+    margin-top: 5px;
+    color: var(--erro);
+    font-size: 0.85rem;
+}
+
+.campo.invalido input,
+.campo.invalido textarea {
+    border-color: var(--erro);
+}
+
+.form-acoes,
+.acoes-linha {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.botao {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 42px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.botao.primario {
+    background: var(--verde);
+    color: #ffffff;
+}
+
+.botao.secundario {
+    background: var(--azul-claro);
+    color: var(--azul);
+    border-color: var(--borda);
+}
+
+.aviso {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: var(--azul);
+}
+
+.erro-servidor {
+    border-color: #fecaca;
+    background: #fff1f2;
+    color: var(--erro);
+}
+
+.detalhes-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.capa-card {
+    padding: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.capa-card img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.info-livro {
+    padding: 24px;
+}
+
+.breadcrumb,
+.autor {
+    color: #526170;
+}
+
+.lista-resumo,
+.lista-topicos {
+    padding-left: 20px;
+    line-height: 1.75;
+}
+
+.painel-detalhe {
+    margin-top: 24px;
+    padding: 22px;
+}
+
+.painel-detalhe h2 {
+    margin-top: 0;
+    color: var(--azul);
+}
+
+.confirmacao-card {
+    padding: 24px;
+}
+
+.tabela-confirmacao {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela-confirmacao th,
+.tabela-confirmacao td {
+    border: 1px solid var(--borda);
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-confirmacao th {
+    width: 220px;
+    background: var(--azul-claro);
+    color: var(--azul);
+}
+
+.form-login {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.mensagens {
+    padding-top: 20px;
+}
+
+.mensagem {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--azul-claro);
+    color: var(--azul);
+}
+
+.rodape {
+    background: var(--azul-claro);
+    border-top: 1px solid var(--borda);
+    padding: 28px 0;
+}
+
+.rodape-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 24px;
+}
+
+.rodape h3,
+.rodape h4 {
+    margin: 0 0 10px;
+    color: var(--azul);
+}
+
+.rodape p {
+    margin: 6px 0;
+    color: #526170;
+    font-size: 0.92rem;
+}
+
+@media (max-width: 850px) {
+    .header-top {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px 0;
+    }
+
+    .header-acoes,
+    .header-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .form-grid,
+    .detalhes-grid,
+    .rodape-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-grande {
+        grid-column: span 1;
+    }
+
+    .form-acoes,
+    .acoes-linha {
+        justify-content: stretch;
+    }
+
+    .botao {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .cabecalho-pagina h1,
+    .pagina-simples h1,
+    .info-livro h1 {
+        font-size: 1.55rem;
+    }
+
+    .form-card,
+    .confirmacao-card,
+    .painel-detalhe,
+    .info-livro {
+        padding: 18px;
+    }
+
+    .tabela-confirmacao th,
+    .tabela-confirmacao td {
+        display: block;
+        width: 100%;
+    }
+}

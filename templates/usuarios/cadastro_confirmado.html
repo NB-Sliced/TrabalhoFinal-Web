@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro Confirmado | Biblioteca Digital{% endblock %}
+
+{% block content %}
+<section class="container pagina-simples">
+    <div class="confirmacao-card">
+        <h1>Cadastro confirmado</h1>
+
+        <p>Os dados do leitor foram recebidos e salvos no banco de dados.</p>
+
+        <table class="tabela-confirmacao">
+            <tbody>
+                <tr>
+                    <th>Nome</th>
+                    <td>{{ leitor.nome }}</td>
+                </tr>
+
+                <tr>
+                    <th>CPF</th>
+                    <td>{{ leitor.cpf }}</td>
+                </tr>
+
+                <tr>
+                    <th>E-mail</th>
+                    <td>{{ leitor.email }}</td>
+                </tr>
+
+                <tr>
+                    <th>Telefone</th>
+                    <td>{{ leitor.telefone }}</td>
+                </tr>
+
+                <tr>
+                    <th>Endereço</th>
+                    <td>{{ leitor.endereco }}</td>
+                </tr>
+
+                <tr>
+                    <th>Cidade</th>
+                    <td>{{ leitor.cidade }}</td>
+                </tr>
+
+                <tr>
+                    <th>Curso/Turma</th>
+                    <td>{{ leitor.curso_turma }}</td>
+                </tr>
+
+                <tr>
+                    <th>Matrícula</th>
+                    <td>{{ leitor.matricula }}</td>
+                </tr>
+
+                <tr>
+                    <th>Login</th>
+                    <td>{{ leitor.login }}</td>
+                </tr>
+
+                <tr>
+                    <th>Observações</th>
+                    <td>{{ leitor.observacoes|default:'Sem observações' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="acoes-linha">
+            <a class="botao primario" href="{% url 'usuarios:login' %}">Ir para login</a>
+            <a class="botao secundario" href="{% url 'usuarios:cadastro' %}">Cadastrar outro leitor</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
