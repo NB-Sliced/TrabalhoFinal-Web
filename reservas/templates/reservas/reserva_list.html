@@ -1,5 +1,47 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservas/css/reserva_list.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>Minhas Reservas (em construção)</h1>
+    
+
+    <div class="estante-aviso">
+
+        <div class="estante-cabecalho">
+            <h1>
+                <i class="bi bi-bookmark"></i> 
+                Minha Estante
+            </h1>
+            <p>Revise os itens que deseja emprestar. Ajuste as quantidades e prazos conforme necessário.</p>
+
+        </div>
+
+        <div class="aviso">
+            <i class="bi bi-info-circle"></i>
+            <span>Ao reduzir a quantidade para zero (0), será solicitada confirmação para remover o item da sua lista.</span>
+        </div>
+
+    </div>
+
+    <table class="tabela-reservas">
+    <thead>
+            <tr>
+                <th>Livro</th>
+                <th>Quantidade</th>
+                <th>Prazo / Formato</th>
+                <th>Ação</th>
+                <th>Ação</th>
+            </tr>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+
+    </table>
+
+
 {% endblock %}

@@ -1,0 +1,50 @@
+*{
+    outline: 0.01rem solid blue; 
+}
+
+.estante-aviso{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    max-width: 175rem;
+    flex-wrap: wrap;
+
+}
+
+
+.estante-cabecalho h1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.6rem;
+    color: #143797;
+}
+
+.estante-cabecalho p {
+    color: #666;
+    font-size: 1.5rem;
+    margin-top: 0.6rem;
+}
+
+.aviso {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background-color: #eaf2ff;
+    color: #1a4d99;
+    padding: 1.4rem 2rem;
+    border-radius: 0.8rem;
+    max-width: 40rem;
+    font-size: 1.2rem;
+}
+
+.aviso i {
+    font-size: 3rem;
+}
+
+.tabela-reservas th{
+    display: flex;
+    justify-content: baseline;
+    gap: 8rem;
+    max-width: 120rem;
+}

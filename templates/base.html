@@ -6,41 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Biblioteca Digital{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
 
 <header>
-    <div class="header-top">
+    <div class="header-cima">
         <a href="{% url 'catalogo:home' %}" class="logo">
-            <span class="logo-icone">📖</span>
-            Biblioteca Digital
+        <i class="bi bi-book"></i>Biblioteca Digital
         </a>
 
-        <form class="busca" action="#" method="get">
-            <input type="text" name="q" placeholder="Buscar livros, autores, categorias...">
-            <button type="submit" class="busca-btn">🔍</button>
+        <form 
+        class="busca" 
+        action="" 
+        method="get">
+            <input 
+            type="" 
+            name="" 
+            placeholder="Buscar livros, autores, categorias...">
+            <button 
+            type="submit" 
+            class="busca-bt"><i class="bi bi-search"></i></button>
         </form>
 
-        <div class="header-acoes">
-            <a href="{% url 'usuarios:cadastro' %}" class="acao-item">
-                <span class="acao-icone">👤</span>
+        <div class="header-botoes">
+            <a href="" 
+            class="bt-cadastrar">
+                <span class="svg_user"><i class="bi bi-person-circle acao-icone"></i></span>
                 <span>Cadastro / Login</span>
             </a>
-            <a href="{% url 'reservas:ver_reserva' %}" class="acao-item">
-                <span class="acao-icone">📚</span>
+            <a href="{% url 'reservas:ver_reserva' %}" class="estantezona">
+                <span class="svg_livros">
+                    <i class="bi-bookmark-star acao-icone"></i></span>
                 <span>Minha Estante</span>
             </a>
         </div>
     </div>
 
-    <nav class="header-nav">
-        <a href="{% url 'catalogo:home' %}">Início</a>
-        <a href="#">Categorias</a>
-        <a href="#">Autores</a>
-        <a href="#">Novidades</a>
-        <a href="#">Sobre</a>
-        <a href="#">Ajuda</a>
+    <nav class="nav-navegar">
+        <a href="">Início</a>
+        <a href="">Categorias</a>
+        <a href="">Autores</a>
+        <a href="">Novidades</a>
+        <a href="">Sobre</a>
+        <a href="">Ajuda</a>
     </nav>
 </header>
 
@@ -52,16 +62,16 @@
 <footer class="footer">
     <div class="footer-topo">
         <div class="footer-coluna footer-sobre">
-            <a href="{% url 'catalogo:home' %}" class="logo">
-                <span class="logo-icone">📖</span>
-                Biblioteca Digital
+            <a href="" class="logo">
+                <span><i class="bi bi-book"></i></span>
+                <span>Biblioteca Digital</span>
             </a>
             <p>Promovendo acesso ao conhecimento e incentivando a leitura para transformar vidas e construir um futuro melhor.</p>
             <div class="footer-social">
-                <a href="#" aria-label="Facebook">📘</a>
-                <a href="#" aria-label="Instagram">📷</a>
-                <a href="#" aria-label="Twitter">🐦</a>
-                <a href="#" aria-label="YouTube">▶️</a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
 
@@ -81,16 +91,16 @@
             <a href="#">Tutoriais</a>
         </div>
 
-        <div class="footer-coluna">
+        <div class="footer-coluna contato">
             <h4>Contato</h4>
-            <p>✉️ contato@bibliotecadigital.org.br</p>
-            <p>📞 (11) 1234-5678</p>
-            <p>📍 Rua do Conhecimento, 123<br>São Paulo - SP, 01000-000</p>
+                <p><i class="bi bi-envelope"></i> contato@bibliotecadigital.org.br</p>
+                <p><i class="bi bi-telephone"></i> (11) 1234-5678</p>
+                <p><i class="bi bi-geo-alt"></i> Rua do Conhecimento, 123<br>São Paulo - SP, 01000-000</p>
         </div>
     </div>
 
-    <div class="footer-base">
-        <p>&copy; {% now "Y" %} Biblioteca Digital. Todos os direitos reservados.</p>
+    <div class="footer-baixo">
+        <p>Biblioteca Digital. Todos os direitos reservados.</p>
     </div>
 </footer>
 
