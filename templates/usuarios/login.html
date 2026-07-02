@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login | Biblioteca Digital{% endblock %}
+
+{% block content %}
+<section class="container formulario-pagina login-pagina">
+    <div class="cabecalho-pagina">
+        <h1>Login do Leitor</h1>
+        <p>Entre com seu login/e-mail e senha para acessar a área de reserva.</p>
+    </div>
+
+    <form id="loginLeitorForm" class="form-card form-login" action="{% url 'usuarios:autenticar' %}" method="post" novalidate>
+        {% csrf_token %}
+
+        <div class="campo">
+            <label for="identificador">Login ou e-mail *</label>
+            <input type="text" id="identificador" name="identificador" placeholder="Digite seu login ou e-mail">
+            <span class="erro" data-erro="identificador"></span>
+        </div>
+
+        <div class="campo">
+            <label for="senha_login">Senha *</label>
+            <input type="password" id="senha_login" name="senha" placeholder="Digite sua senha">
+            <span class="erro" data-erro="senha_login"></span>
+        </div>
+
+        <div class="form-acoes">
+            <button type="submit" class="botao primario">Entrar</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/cadastro_leitor.js' %}"></script>
+{% endblock %}
