@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{% static 'reservas/css/reserva_list.css' %}">
 {% endblock %}
 
+
+
 {% block content %}
     
 
@@ -27,21 +29,67 @@
     </div>
 
     <table class="tabela-reservas">
-    <thead>
+        <thead>
+                <tr class="cabeçalho">
+                    <th>Livro</th>
+                    <th>Quantidade</th>
+                    <th>Ação</th>
+                </tr>
+        </thead>
+
+        <tbody>
+
             <tr>
-                <th>Livro</th>
-                <th>Quantidade</th>
-                <th>Prazo / Formato</th>
-                <th>Ação</th>
-                <th>Ação</th>
+                <td class="debaixo-livro">
+                    <img 
+                    src="https://i.pinimg.com/736x/29/0c/57/290c57db68f323b0db37e08ad2cdd49b.jpg" 
+                    alt="Capa do livro"
+                    height="150px" width="">
+                    <div>
+                        <strong>1984</strong>
+                        <p>George Orwell</p>
+                        <span class="status-disponivel">Disponível</span>
+                    </div>
+                </td>
+
+                <td class="debaixo-quantidade">
+                    <div class="controle-qtd">
+                        <button class="btn-Menos">−</button>
+                        <span class="valor-qtd">1</span>
+                        <button class="btn-Mais">+</button>
+                    </div>
+                </td>
+
+                <td class="debaixo-remover">
+                    <button class="btn-remover">
+                        <i class="bi bi-trash"></i> Remover
+                    </button>
+                </td>
+                
             </tr>
-    </thead>
 
-    <tbody>
+        </tbody>
 
-    </tbody>
 
     </table>
+
+    <div class="estante-rodape">
+        <div class="estante-total">
+            <i class="bi bi-journal-check"></i>
+            <div>
+                <strong>Total de itens</strong>
+                <span>1 livro(s) selecionado(s)</span>
+            </div>
+        </div>
+
+        <form action="" method="">
+            <button type="submit" class="btn-finalizar">
+                Finalizar Reserva <i class="bi bi-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+
+    <script src="{% static 'reservas/js/reserva_list.js' %}"></script>
 
 
 {% endblock %}

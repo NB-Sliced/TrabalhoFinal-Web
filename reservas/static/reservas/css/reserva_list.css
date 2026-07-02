@@ -1,6 +1,6 @@
-*{
-    outline: 0.01rem solid blue; 
-}
+/* *{
+     outline: 0.01rem solid blue;  
+} */
 
 .estante-aviso{
     display: flex;
@@ -10,7 +10,6 @@
     flex-wrap: wrap;
 
 }
-
 
 .estante-cabecalho h1 {
     display: flex;
@@ -42,9 +41,161 @@
     font-size: 3rem;
 }
 
-.tabela-reservas th{
+.tabela-reservas {
+    width: 100%;
+    margin-top: 2.4rem;
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+}
+
+.tabela-reservas th,
+.tabela-reservas td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 0.5rem solid #eee;
+}
+
+.tabela-reservas th {
+    background-color: #f5f6fa;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.debaixo-livro {
     display: flex;
-    justify-content: baseline;
-    gap: 8rem;
-    max-width: 120rem;
+    align-items: center;
+    gap: 1.9rem;
+}
+
+.debaixo-livro img {
+    width: 8rem;
+    height: 11rem;
+    object-fit: cover;
+    border-radius: 0.4rem;
+}
+
+.debaixo-livro strong {
+    display: block;
+    font-size: 1.9rem;
+    color: #16213e;
+    margin-bottom: 0.2rem;
+}
+
+.debaixo-livro p {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 0.6rem;
+}
+
+.status-disponivel {
+    font-size: 1.2rem;
+    color: #1a8c4a;
+    font-weight: 600;
+}
+
+.debaixo-quantidade {
+    text-align: center; 
+}
+
+.controle-qtd {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.6rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.btn-qtd {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    color: #16213e;
+}
+
+.btn-qtd:hover {
+    color: hsl(213, 100%, 39%);
+}
+
+.valor-qtd {
+    font-size: 1.5rem;
+    font-weight: 600;
+    min-width: 2rem;
+    text-align: center;
+}
+
+.btn-remover {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    color: #c0392b;
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+
+.btn-remover:hover {
+    text-decoration: underline;
+}
+
+.estante-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2.4rem;
+    padding: 2rem 2.4rem;
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+}
+
+.estante-total {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 2.4rem;
+    color: #16213e;
+}
+
+.estante-total div {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+
+.estante-total strong {
+    font-size: 1.5rem;
+    color: #16213e;
+}
+
+.estante-total span {
+    color: #666;
+}
+
+.btn-finalizar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #0f9d78;
+    color: #ffffff;
+    border: none;
+    padding: 1.2rem 2.4rem;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-finalizar:hover {
+    background-color: #0c7d61;
 }
