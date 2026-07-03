@@ -233,3 +233,8 @@ def api_login_leitor(request):
         },
         status=401,
     )
+
+def logout_leitor(request):
+    request.session.flush()
+    messages.success(request, "Você saiu da sua conta.")
+    return redirect(reverse("catalogo:home"))

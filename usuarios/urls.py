@@ -13,4 +13,5 @@ urlpatterns = [
 
     path("api/cadastro/", views.api_cadastro_leitor, name="api_cadastro"),
     path("api/login/", views.api_login_leitor, name="api_login"),
+    path("logout/", views.logout_leitor, name="logout"),
 ]
