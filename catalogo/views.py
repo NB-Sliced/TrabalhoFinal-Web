@@ -30,7 +30,7 @@ def detalhes_livro(request, livro_id):
     Página 3: detalhes do livro.
     """
     livro = get_object_or_404(Livro, id=livro_id)
-    return render(request, 'catalogo/detalhes_livro.html', {
+    return render(request, 'catalogo/detalhes_livros.html', {
         'livro': livro,
     })
 

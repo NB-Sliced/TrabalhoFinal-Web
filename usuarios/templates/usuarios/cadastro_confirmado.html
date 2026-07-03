@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Cadastro Confirmado | Biblioteca Digital{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/confirmacao.css' %}">
+{% endblock %}
+
 
 {% block content %}
 <section class="container pagina-simples">

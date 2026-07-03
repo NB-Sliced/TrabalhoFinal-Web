@@ -9,4 +9,4 @@ urlpatterns = [
     path("atualizar/<int:livro_id>/", views.atualizar_quantidade, name="atualizar"),
     path("remover/<int:livro_id>/", views.remover_item, name="remover"),
     path("finalizar/", views.finalizar_reserva, name="finalizar"),
-]
+]   

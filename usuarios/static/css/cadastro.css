@@ -1,0 +1,137 @@
+.formulario-pagina {
+    max-width: 80rem;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.cabecalho-pagina {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cabecalho-pagina h1 {
+    font-family: 'Montserrat', 'Times New Roman', serif;
+    color: #31065d;
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+.cabecalho-pagina p {
+    color: #180c51;
+    font-size: 1.5rem;
+}
+
+.form-card {
+    background-color: #fdfaf5;
+    border: 0.1rem solid #3715dd;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(59, 42, 26, 0.08);
+}
+
+.form-campos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem 2.4rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 1.2rem);
+}
+
+.campo-grande {
+    flex: 1 1 100%;
+}
+
+.campo label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #253147;
+    margin-bottom: 0.6rem;
+}
+
+.campo input,
+.campo textarea {
+    padding: 1rem 1.2rem;
+    border: 0.1rem solid #cbb99a;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    background-color: #fffefb;
+    color: #251a3b;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #4a3b8a;
+    box-shadow: 0 0 0 0.3rem rgba(138, 109, 59, 0.15);
+}
+
+.campo input.campo-invalido,
+.campo textarea.campo-invalido {
+    border-color: #dc1f1f;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.erro {
+    display: block;
+    min-height: 1.6rem;
+    font-size: 1.2rem;
+    color: #c22424;
+    margin-top: 0.4rem;
+}
+
+.form-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    margin-top: 2.4rem;
+}
+
+.botao {
+    padding: 1rem 2.2rem;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.botao.primario {
+    background-color: #23256b;
+    color: #fdfaf5;
+}
+
+.botao.primario:hover {
+    background-color: #210c4e;
+}
+
+.botao.secundario {
+    background-color: transparent;
+    color: #4c4a6b;
+    border: 0.1rem solid #ae9acb;
+}
+
+.botao.secundario:hover {
+    background-color: #b196e7;
+}
+
+.aviso.erro-servidor {
+    background-color: #fbe9e9;
+    border: 0.1rem solid #e3b3b3;
+    color: #8a2c2c;
+    border-radius: 0.6rem;
+    padding: 1.4rem 1.8rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+
+.aviso.erro-servidor ul {
+    margin: 0.8rem 0 0 1.8rem;
+}

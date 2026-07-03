@@ -21,7 +21,7 @@
       <h3>{{ livro.titulo }}</h3>
       <p>{{ livro.autor }}</p>
       <p>{{ livro.editora }}, {{ livro.ano }}</p>
-      <a href="detalhes_livros" class="btn">Ver detalhes</a>
+      <a href="{% url 'catalogo:detalhes_livro' livro.id %}" class="btn">Ver detalhes</a>
     </div>
     {% empty %}
     <p>Nenhum livro cadastrado nesta categoria ainda.</p>

@@ -1,0 +1,85 @@
+.pagina-simples {
+    max-width: 60rem;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.confirmacao-card {
+    background-color: #ffffff;
+    border: 0.1rem solid #e0e0e0;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+}
+
+.confirmacao-card h1 {
+    color: #16213e;
+    font-size: 2.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.confirmacao-card > p {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 2.4rem;
+}
+
+.tabela-confirmacao {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2.4rem;
+}
+
+.tabela-confirmacao tr {
+    border-bottom: 0.1rem solid #eee;
+}
+
+.tabela-confirmacao th,
+.tabela-confirmacao td {
+    padding: 1.2rem 0;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.tabela-confirmacao th {
+    color: #666;
+    font-weight: 600;
+    width: 16rem;
+}
+
+.tabela-confirmacao td {
+    color: #16213e;
+}
+
+.acoes-linha {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.acoes-linha .botao {
+    padding: 1.2rem 2.4rem;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.acoes-linha .botao.primario {
+    background-color: #005ac8;
+    color: #ffffff;
+}
+
+.acoes-linha .botao.primario:hover {
+    background-color: #0047a3;
+}
+
+.acoes-linha .botao.secundario {
+    background-color: transparent;
+    color: #16213e;
+    border: 0.1rem solid #cccccc;
+}
+
+.acoes-linha .botao.secundario:hover {
+    background-color: #f0f0f0;
+}
