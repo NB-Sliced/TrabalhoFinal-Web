@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}{{ livro.titulo }} | Biblioteca Digital{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'catalogo/css/detalhes_livros.css' %}">
+{% endblock %}
+
 {% block content %}
 <section class="container detalhes-livro">
-    {% if usando_exemplo %}
-        <div class="aviso">
-            Exemplo visual temporário. Quando o Membro 1 criar o Model Livro, esta página buscará os dados reais pelo ID.
-        </div>
-    {% endif %}
 
     <div class="detalhes-grid">
         <article class="capa-card">
@@ -16,7 +16,7 @@
         </article>
 
         <article class="info-livro">
-            <p class="breadcrumb">Início &gt; Categorias &gt; {{ livro.genero }} &gt; {{ livro.titulo }}</p>
+            <p class="breadcrumb">Início &gt; Categorias &gt; {{ livro.genero.nome }} &gt; {{ livro.titulo }}</p>
 
             <h1>{{ livro.titulo }}</h1>
 
@@ -27,13 +27,15 @@
             <ul class="lista-resumo">
                 <li><strong>Editora:</strong> {{ livro.editora }}</li>
                 <li><strong>Ano:</strong> {{ livro.ano }}</li>
-                <li><strong>Páginas:</strong> {{ livro.numero_paginas }}</li>
-                <li><strong>Gênero:</strong> {{ livro.genero }}</li>
-                <li><strong>Disponibilidade:</strong> {{ livro.disponibilidade }}</li>
+                <li><strong>Páginas:</strong> {{ livro.paginas }}</li>
+                <li><strong>Gênero:</strong> {{ livro.genero.nome }}</li>
+                <li><strong>Disponibilidade:</strong>
+                    {% if livro.disponivel %}Disponível{% else %}Indisponível{% endif %}
+                </li>
             </ul>
 
             <div class="acoes-linha">
-                <a class="botao primario" href="/reservas/adicionar/{{ livro.id }}/">
+                <a class="botao primario" href="{% url 'reservas:adicionar' livro.id %}">
                     Adicionar à minha estante
                 </a>
 
@@ -49,16 +51,5 @@
         <p>{{ livro.sinopse }}</p>
     </section>
 
-    <section class="painel-detalhe">
-        <h2>Informações organizadas em lista</h2>
-
-        <ul class="lista-topicos">
-            {% for topico in livro.topicos %}
-                <li>{{ topico }}</li>
-            {% empty %}
-                <li>Livro disponível para consulta e reserva na biblioteca digital.</li>
-            {% endfor %}
-        </ul>
-    </section>
 </section>
 {% endblock %}

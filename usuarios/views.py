@@ -117,7 +117,7 @@ def autenticar_leitor(request):
         request.session["leitor_nome"] = leitor.nome
         messages.success(request, f"Bem-vindo(a), {leitor.nome}!")
 
-        return redirect("/reservas/")
+        return redirect(reverse('reservas:ver_reserva'))
 
     messages.error(request, "Login/e-mail ou senha inválidos.")
     return redirect(reverse("usuarios:login"))

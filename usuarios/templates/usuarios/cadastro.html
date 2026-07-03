@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+{% endblock %}
+
 {% block title %}Cadastro de Leitor | Biblioteca Digital{% endblock %}
 
 {% block content %}
@@ -22,7 +27,7 @@
     {% endif %}
 
     <form id="cadastroLeitorForm" class="form-card" action="{% url 'usuarios:cadastro_confirmar' %}" method="get" novalidate>
-        <div class="form-grid">
+        <div class="form-campos">
             <div class="campo">
                 <label for="nome">Nome completo *</label>
                 <input type="text" id="nome" name="nome" value="{{ dados.nome }}" placeholder="Digite seu nome completo">
